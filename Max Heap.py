@@ -1,21 +1,21 @@
 class Maxheap:
     def __init__(self,values):
-        self.heap=[0]
+        self.heap=[0] #to have a 1 based indexing , We will ignore 0 in following code i.e. index 0 is ignored
         for i in values:
             self.heap.append(i)
             self.__floatup(self.heap.index(i))
 
-
+    # To push the data in heap
     def push(self,data):
         self.heap.append(data)
         self.__floatup(self.heap.index(data))
-
+    #To get the maximum priority data
     def peek(self):
         if len(self.heap)>=2:
             return self.heap[1]
         else:
             return False
-
+    #To pop the maximum priority
     def pop(self):
         if len(self.heap)>2:
             self.__swap(1,len(self.heap)-1)
